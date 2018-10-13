@@ -1,0 +1,97 @@
+db:
+    app_user:
+      id:       Big int, primarykey, autoincrement
+      email:    String, length 100, not null, unique
+      password: String, length 100, not null
+      is_email_verified: boolean, default false
+      name:     String, length 100, not null
+      mobile:   Integer, not null, length=10, unique
+      type:     String, not null, length=1, isIn: [['S', 'T']], (S= Student, T= Tutor)
+
+
+    tutur
+      id: Big int, primarykey, foreign key (app_user(id))
+      gender:   String, not null, length 1, isIn: [['M', 'F']],
+      min_rate: Integer, not null, min:10
+      max_rate: Integer, not null, max 50000
+      summary:  String, not null, length, 120
+      about_me: String, length 2000
+      subject_id: Integer, foreign key (subject, id)
+      about_session: String, length 2000
+      qualification: String, not null, length 2000
+      availability:  String, not null, lenth 1000
+      state_id:    Integer, foreign key (state, id)
+      district_id: Integer, foreign key (district, id)
+      comments: String, allow null, length 1000
+      is_hidden:     Boolean, default false
+
+    state:
+      id: Integer, primary key, not null
+      Name: String, length 50, not null, unique
+
+    district:
+      id: Integer, primary key, not null
+      Name: String, length 50, not null
+      state_id: Integer, not null (foreign key state(id))
+
+    subject:
+      id: Integer, primary key, not null
+      name: String, length 100, not null, unique
+
+
+===================================================================
+
+id, email, password, is_email_verified, Name, mobile, type
+
+api:
+  app_user:
+    get /id   return user (id, email, is_email_verified, name, mobile, type)
+    post    app_user expect (email, password, name, mobile, type)
+    put /id    app_user expect (email, password, otp)
+
+    search condition (subject_id, state_id, district_id) return [user_id]
+    ?    get  verify email (id) return (true, false)
+    post verifyemail (email, hash)
+    getTutor /id return (id, name, gender, min_rate, max_rate, summary, subject_id, about_me)
+    getTutorDetail /id tutor (email, mobile, about_session, qualification, avalability, state_id, district_id, comments)
+
+Authenticate:
+    authenticate (email, password)  (id, name, type)  return authkey
+
+id, gender, min_rate, max_rate, summary, subject_id, about_me, about_session, qualification,       availability, state_id, district_id, comments, is_hidden
+  tutor:
+    get /id: return tutor
+    post /id: tutor (gender, min-max rate, summary, subject_id, about_me, about_session qualification, avalability, state_id, district_id, comments)
+    put /id: tutor (min-max rate, summary, subject_id, about_me, about_session, qualification, avalability, state_id, district_id, comments, is_hidden)
+
+  Subjects:
+    get: List < subject> (id, subject name)
+
+  States:
+    get: List <State>
+
+  District:
+    get/id List <District>
+
+
+
+==================================================================
+
+
+authenticate:
+  all api except
+    post authkey
+    verifyemail
+    Subjects
+
+
+authorization:
+  user:
+    get, put, post: own data only
+  tutor:
+    get, post, put: own data only
+
+
+ssh root@scacaa01jb.us.oracle.com   / welcome1
+ssh root@192.168.10.44  / welcome1
+https://jira.oraclecorp.com/jira/browse/OCACS-2143
