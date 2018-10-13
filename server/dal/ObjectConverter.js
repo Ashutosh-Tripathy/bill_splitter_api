@@ -4,18 +4,20 @@ const friendRequest = ['id', 'from', 'to', 'status', `created_at`, `updated_at`,
 const postFriendRequest = ['to'];
 const notification = ['id', 'from', 'to', 'type', `created_at`, `updated_at`, `deleted_at`];
 const transaction = ['id', 'spender', 'owner', 'amount', `comment`, `created_at`, `updated_at`, `deleted_at`];
+const postTransaction = ['owers', 'amount', `comment`];
 
 const objectMap = {
     'appuser': {
         default: appuser,
         post: postAppuser
-    },    'friendRequest': {
+    }, 'friendRequest': {
         default: friendRequest,
         post: postFriendRequest
-    },    'notification': {
+    }, 'notification': {
         default: notification,
-    },    'transaction': {
+    }, 'transaction': {
         default: transaction,
+        post: postTransaction
     }
 };
 
