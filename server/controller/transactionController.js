@@ -21,23 +21,6 @@ export const getTransactions = (req, res) => {
     });
 };
 
-export const countNewTransaction = (req, res) => {
-  const userId = req.params.userId;
-  logger.info(`count new transaction: ${userId}`);
-  const condition = {
-    to: {
-      [Op.eq]: userId
-    },
-    status:1
-  };
-  dal.count(db.transaction, condition)
-    .then(({
-      data,
-      statusCode
-    }) => {
-      res.status(statusCode).json(data);
-    });
-};
 
 export const insertTransaction = (req, res) => {
   const body = dal.convertObject(req.body, 'transaction', 'post');

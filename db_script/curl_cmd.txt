@@ -1,7 +1,16 @@
-curl -H "Content-Type: application/json" -X POST -d '{"email": "test-1@gmail.com", "name": "test-1", "mobile": 9867917100, "type": "S", "password": "test-1"}' http://52.172.34.19:8080/api/app_user ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_1@gmail.com", "password": "test_1", "name": "test_1", "mobile": 9867917161}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_2@gmail.com", "password": "test_2", "name": "test_2", "mobile": 9867917162}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_3@gmail.com", "password": "test_3", "name": "test_3", "mobile": 9867917163}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_4@gmail.com", "password": "test_4", "name": "test_4", "mobile": 9867917164}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_5@gmail.com", "password": "test_5", "name": "test_5", "mobile": 9867917165}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_6@gmail.com", "password": "test_6", "name": "test_6", "mobile": 9867917166}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_7@gmail.com", "password": "test_7", "name": "test_7", "mobile": 9867917167}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_8@gmail.com", "password": "test_8", "name": "test_8", "mobile": 9867917168}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_9@gmail.com", "password": "test_9", "name": "test_9", "mobile": 9867917169}' http://localhost:3000/api/appuser ;
+curl -H "Content-Type: application/json" -X POST -d '{"email": "test_10@gmail.com", "password": "test_10", "name": "test_10", "mobile": 9867917160}' http://localhost:3000/api/appuser ;
 
 
-curl -H "Content-Type: application/json" -X POST -d '{"id": 2, "gender": "M", "min_rate": 100, "max_rate": 500, "summary": "summary", "subject_id": 1, "about_me": "about me", "about_session": "about session", "qualification": "B.Tech", "availability": "Weekdays", "stateId": 34, "districtId": 1277, "comment": "comment"}' http://52.172.34.19:8080/api/tutor
+curl -H "Content-Type: application/json" -X POST -d '{"id": 2, "gender": "M", "min_rate": 100, "max_rate": 500, "summary": "summary", "subject_id": 1, "about_me": "about me", "about_session": "about session", "qualification": "B.Tech", "availability": "Weekdays", "stateId": 34, "districtId": 1277, "comment": "comment"}' http://localhost:3000/api/tutor
 curl -H "Content-Type: application/json" -X POST -d '{"buyerId": 1, "sellerId": 2, "note": "test note"}' http://localhost:3000/api/orderdetail
 curl -H "Content-Type: application/json" -X POST -d '{"buyerId": 1, "sellerId": 3, "note": "test note"}' http://localhost:3000/api/orderdetail
 curl -H "Content-Type: application/json" -X POST -d'{"buyerId": 1, "sellerId": 3, "note": "test note", "created_at": "2010-09-23 17:33:45.484 +00:00"}' http://localhost:3000/api/orderdetail

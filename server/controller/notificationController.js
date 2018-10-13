@@ -21,7 +21,7 @@ export const getNotifications = (req, res) => {
     });
 };
 
-export const countNewNotification = (req, res) => {
+export const countNotification = (req, res) => {
   const userId = req.params.userId;
   logger.info(`count new notification: ${userId}`);
   const condition = {

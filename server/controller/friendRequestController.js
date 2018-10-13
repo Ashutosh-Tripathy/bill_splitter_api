@@ -4,7 +4,7 @@ import dal from '../dal';
 
 const Op = db.Sequelize.Op;
 
-export const getFriends = (req, res) => {
+export const getFriendRequests = (req, res) => {
   const userId = req.params.userId;
   logger.info(`get friendRequest: ${userId}`);
   const condition = {
@@ -21,7 +21,7 @@ export const getFriends = (req, res) => {
     });
 };
 
-export const countNewFriendRequest = (req, res) => {
+export const countFriendRequest = (req, res) => {
   const userId = req.params.userId;
   logger.info(`count new friendRequest: ${userId}`);
   const condition = {

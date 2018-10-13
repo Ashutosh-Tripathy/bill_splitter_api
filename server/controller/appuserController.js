@@ -19,7 +19,7 @@ export const getAppuser = (req, res) => {
 
 export const insertAppuser = (req, res) => {
   const body = dal.convertObject(req.body, 'appuser', 'post');
-  logger.info(`post appuser: ${body}`);
+  logger.info(`post appuser: ${JSON.stringify(body)}`);
 
   dal.insertData(db.appuser, body)
     .then(({

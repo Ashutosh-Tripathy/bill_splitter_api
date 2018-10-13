@@ -1,11 +1,11 @@
 import { getAppuser, insertAppuser } from './appuserController';
-import { getFriends, countNewFriendRequest, insertFriendRequest } from './friendRequestController';
-import { getNotifications, countNewNotification, insertNotification } from './notificationController';
-import { getTransaction, countNewTransaction, insertTransaction } from './transactionController';
+import { getFriendRequests, countFriendRequest, insertFriendRequest } from './friendRequestController';
+import { getNotifications, countNotification, insertNotification } from './notificationController';
+import { getTransactions, countNewTransaction, insertTransaction } from './transactionController';
 
 export default {
     getAppuser, insertAppuser,
-    getFriends, countNewFriendRequest, insertFriendRequest,
-    getNotifications, countNewNotification, insertNotification,
-    getTransaction, countNewTransaction, insertTransaction
+    getFriendRequests, countFriendRequest, insertFriendRequest,
+    getNotifications, countNotification, insertNotification,
+    getTransactions,  insertTransaction
 };

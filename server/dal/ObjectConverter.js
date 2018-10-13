@@ -1,18 +1,19 @@
-const appuser = ['id', 'name', 'mobile', 'type', 'stateId', 'districtId', 'area', 'address', `created_at`, `updated_at`, `deleted_at`];
-const postUserDetail = ['id', 'name', 'mobile', 'type', 'stateId', 'districtId', 'area', 'address'];
-const orderDetail = ['id', 'buyerId', 'sellerId', 'status', 'note', `created_at`, `updated_at`, `deleted_at`];
-const postOrderDetail = ['id', 'buyerId', 'sellerId', 'status', 'note'];
-const patchOrderDetail = ['status'];
+const appuser = ['id', 'email', 'name', 'mobile', `created_at`, `updated_at`, `deleted_at`];
+const postAppuser = ['id', 'email', 'password', 'name', 'mobile', `created_at`, `updated_at`, `deleted_at`];
+const friendRequest = ['id', 'from', 'to', 'status', `created_at`, `updated_at`, `deleted_at`];
+const notification = ['id', 'from', 'to', 'type', `created_at`, `updated_at`, `deleted_at`];
+const transaction = ['id', 'spender', 'owner', 'amount', `comment`, `created_at`, `updated_at`, `deleted_at`];
 
 const objectMap = {
     'appuser': {
         default: appuser,
-        post: postUserDetail
-    },
-    'orderDetail': {
-        default: orderDetail,
-        post: postOrderDetail,
-        patch: patchOrderDetail
+        post: postAppuser
+    },    'friendRequest': {
+        default: friendRequest,
+    },    'notification': {
+        default: notification,
+    },    'transaction': {
+        default: transaction,
     }
 };
 

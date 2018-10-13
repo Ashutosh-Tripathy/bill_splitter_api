@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 
 const appuser = (sequelize, DataTypes) => {
-  const tbl = sequelize.define('user_detail', {
+  const tbl = sequelize.define('appuser', {
     id: {
       type: DataTypes.BIGINT,
       primaryKey: true,
