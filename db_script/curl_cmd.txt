@@ -10,6 +10,11 @@ curl -H "Content-Type: application/json" -X POST -d '{"email": "test_9@gmail.com
 curl -H "Content-Type: application/json" -X POST -d '{"email": "test_10@gmail.com", "password": "test_10", "name": "test_10", "mobile": 9867917160}' http://localhost:3000/api/appuser ;
 
 
+
+
+curl -H "Content-Type: application/json" -X POST -d '{"to": 2}' http://localhost:3000/api/appuser/1/friendrequest ;
+
+
 curl -H "Content-Type: application/json" -X POST -d '{"id": 2, "gender": "M", "min_rate": 100, "max_rate": 500, "summary": "summary", "subject_id": 1, "about_me": "about me", "about_session": "about session", "qualification": "B.Tech", "availability": "Weekdays", "stateId": 34, "districtId": 1277, "comment": "comment"}' http://localhost:3000/api/tutor
 curl -H "Content-Type: application/json" -X POST -d '{"buyerId": 1, "sellerId": 2, "note": "test note"}' http://localhost:3000/api/orderdetail
 curl -H "Content-Type: application/json" -X POST -d '{"buyerId": 1, "sellerId": 3, "note": "test note"}' http://localhost:3000/api/orderdetail

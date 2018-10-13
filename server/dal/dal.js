@@ -79,7 +79,7 @@ export const count = (model, condition) => new Promise((resolve, reject) => {
         where: condition
     })
         .then(data => {
-            if (!data) {
+            if (data === undefined) {
                 resolve(notFound);
             } else {
                 resolve({

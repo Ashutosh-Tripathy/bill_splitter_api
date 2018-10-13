@@ -41,6 +41,7 @@ export const countFriendRequest = (req, res) => {
 
 export const insertFriendRequest = (req, res) => {
   const body = dal.convertObject(req.body, 'friendRequest', 'post');
+  body.from = req.params.userId;
   logger.info(`post friendRequest: ${body}`);
 
   dal.insertData(db.friendRequest, body)

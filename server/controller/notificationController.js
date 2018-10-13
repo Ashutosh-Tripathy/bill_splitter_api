@@ -27,8 +27,7 @@ export const countNotification = (req, res) => {
   const condition = {
     to: {
       [Op.eq]: userId
-    },
-    status:1
+    }
   };
   dal.count(db.notification, condition)
     .then(({
